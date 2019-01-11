@@ -1,0 +1,67 @@
+#img1{
+    width:100%
+}
+#imgg1{
+    padding:0px;
+}
+#marg{
+    margin-top:4px;
+}
+.line{
+    line-height:10px;
+    padding: 9px;
+}
+
+#delete{
+    display:inline;
+}
+
+#edit{
+    color:white;
+}
+
+#description{
+    text-align: justify;
+    line-height: 20px;
+}
+
+#display{
+    margin-bottom: 20px;
+    padding:0px;
+}
+#display_button{
+    margin-bottom: 10px;
+}
+
+#header{
+    margin-top: 20px;
+}
+
+#flash_message{
+    margin-top: 20px;
+}
+
+#camp_img{
+    height:200px;
+    width:100%;
+}
+
+#background{
+    background: url(https://images.pexels.com/photos/176381/pexels-photo-176381.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500) no-repeat center fixed; 
+    background-size: cover;
+}
+
+#map{
+    border:1px solid black;
+}
+
+#Nomatch{
+    text-align: center;
+    font-size: 40px;
+}
+
+
+
+
+
+

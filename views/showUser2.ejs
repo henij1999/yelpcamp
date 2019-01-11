@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link rel="stylesheet" href="/styles.css">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  height:75%;
+  margin-bottom:20px;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+.main1{
+    margin-top:20px;
+}
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+<div class="container main1">
+  <div class="row text-center">
+      <div class="card col-lg-4">
+          <img src="<%=user.avatar%>" alt="<%=user.username%>" style="width:100%;margin-top:18px">
+          <br>
+          <h1><%=user.firstName%>  <%=user.lastName%></h1>
+          <p class="title"><%=user.username%></p>
+          <p><a href="mailto:<%=user.email%>"><button>Mail</button></a></p>
+      </div>
+      <div class="col-lg-8">
+          <div><h3>All campgrounds by <%=user.firstName%></h3></div>
+          <div class="container">
+              <div class="row">
+                  <% campgrounds.forEach(function(camp){ %>
+                        <div class="col-lg-6">
+                            <div id="display" class="img-thumbnail">
+                                <img id="camp_img" class="img-fluid" src="<%= camp.image %>" alt="No Image">
+                                <div class="caption"><h4 style="padding-top:5px;"><%=camp.name %></h4></div>
+                                <a id="display_button" href="/campgrounds/<%=camp._id%>" class="btn btn-primary">More Info</a>
+                            </div>
+                        </div>
+                    <% }); %>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

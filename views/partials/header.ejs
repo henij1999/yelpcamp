@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YelpCamp</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link rel="stylesheet" href="/styles.css">
+        <script>
+          function func(){
+              var checkbox = document.getElementById("gridCheck");
+              var admin    = document.getElementById("admin");
+              if(checkbox.checked){
+                  admin.style.display="block";
+              }
+              else{
+                  admin.style.display="none";
+              }
+          }
+      </script>
+    </head>
+    <body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/campgrounds">YelpCamp</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto"></ul>
+    <ul class="navbar-nav">
+        <% if(!currentUser){ %>
+        <li class="nav-item"><a class="nav-link" href="/register">Sign Up</a></li>
+        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+        <% }else{ %>
+        <li class="nav-item"><a class="nav-link" href="#">Signed In As <%=currentUser.username%></a></li>
+        <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+        <li class="nav-item"><a class="nav-link" href="/user/<%=currentUser._id%>">My Profile</a></li>
+        <% } %>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container" id="flash_message">
+  <% if(error && error.length>0){ %>
+    <div class="alert alert-danger">
+      <%=error%>
+    </div>
+  <% } %>
+  <% if(success && success.length>0){ %>
+    <div class="alert alert-success">
+      <%=success%>
+    </div>
+  <% } %>  
+</div>
+
